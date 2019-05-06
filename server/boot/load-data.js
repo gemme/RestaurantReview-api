@@ -1,21 +1,10 @@
 'use strict';
 
-module.exports = Restaurant => {
+module.exports = (app, cb) => {
 
-  /* Restaurant.places = cb => {
-    cb(null, restaurants);
-  };
-
-  Restaurant.remoteMethod('places', {
-    "accepts": [],
-    "http": {"verb": "get", "path": "/places"},
-    returns: {root: true, type: 'array'}
-  }); */
-};
-
-
-const restaurants = [
-    {name: 'React Cafe', address: '123 Anywhere St', rating: 5},
+const {Restaurant} = app.models;
+const data = [
+    {name: 'React Cafe\'s', address: '123 Anywhere St', rating: 5},
     {name: 'Fancy Restaurant', address: '799 Main St', rating: 3},
     {name: 'Taco Place', address: '550 Maple Rd', rating: 2},
     {name: "Tony's Diner", address: '4101 College St', rating: 1},
@@ -36,3 +25,9 @@ const restaurants = [
     {name: "King's Garden", address: '2935 Victoria Ct', rating: 5},
     {name: 'Salads and More', address: '2454 Preston St', rating: 1},
   ];
+  Restaurant.create(data,
+    (err, instance, created) => {
+        if(err) cb(err);
+        cb(null, instance);
+  });
+}
