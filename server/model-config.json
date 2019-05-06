@@ -38,5 +38,9 @@
   "Restaurant": {
     "dataSource": "db",
     "public": true
+  },
+  "Review": {
+    "dataSource": "db",
+    "public": true
   }
 }

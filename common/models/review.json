@@ -1,6 +1,5 @@
 {
-  "name": "Restaurant",
-  "plural": "Restaurants",
+  "name": "Review",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -8,15 +7,14 @@
   },
   "properties": {
     "name": {
-      "type": "string",
-      "required": true
-    },
-    "address": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "rating": {
       "type": "number",
+      "default": 0
+    },
+    "comment": {
+      "type": "string",
       "required": true
     }
   },
