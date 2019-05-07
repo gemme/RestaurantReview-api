@@ -10,7 +10,7 @@ module.exports = Restaurant => {
     "accepts": [],
     "http": {"verb": "get", "path": "/places"},
     returns: {root: true, type: 'array'}
-  }); */s
+  }); */
 };
 
 
